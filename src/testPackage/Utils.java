@@ -11,6 +11,7 @@ public class Utils {
 	public static String OurSolutionURL = "https://www.perfectward.com/our-solution";
 	public static String ResourcesURL = "https://www.perfectward.com/resources";
 	public static String ContactUsURL = "https://www.perfectward.com/contact";
+	public static String IPCURL = "https://www.perfectward.com/ipc";
 	
 	//Contact Us Data
 	public static String FirstName = "Craig";

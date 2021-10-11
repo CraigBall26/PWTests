@@ -19,6 +19,12 @@ public class mainTest {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.manage().window().maximize();
 		
+		//Ensures IPC link is, accessible, checks Contact Us is available and enabled on that page and Book Demo Button
+		driver.findElement(By.linkText(FlowLocators.IPCText)).click();
+		Assert.assertEquals(driver.getCurrentUrl(), Utils.IPCURL);
+		Assert.assertEquals(true, driver.findElement(By.linkText(FlowLocators.BookDemoText)).isEnabled());
+		Assert.assertEquals(true, driver.findElement(By.linkText(FlowLocators.BookDemoText)).isDisplayed());
+		
 		//Ensures Features link is, accessible, checks Contact Us is available and enabled on that page and Book Demo Button
 		driver.findElement(By.linkText(FlowLocators.FeaturesLinkText)).click();
 	    Assert.assertEquals(driver.getCurrentUrl(), Utils.FeaturesURL);
@@ -55,9 +61,11 @@ public class mainTest {
         Thread.sleep(1000);
         driver.findElement(By.xpath(FlowLocators.ContactSubmitCheckMark)).click();
         driver.findElement(By.xpath(FlowLocators.ContactSubmitButton)).click();
+        Thread.sleep(1000);
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-350)", "");
         Thread.sleep(500);
         driver.findElement(By.xpath(FlowLocators.ErrorMessage)).click();
-        
         driver.quit();
 	}
 }

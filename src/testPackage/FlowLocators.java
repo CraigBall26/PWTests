@@ -8,6 +8,7 @@ public class FlowLocators {
 	public static String ResourcesText = "Resources";
 	public static String ContactText = "Contact";
 	public static String BookDemoText = "Book a Demo";
+	public static String IPCText = "IPC";
 	
 	//Contact Us Fields
 	public static String FirstNameField = "firstName";
